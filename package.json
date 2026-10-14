@@ -1,0 +1,13 @@
+{
+  "name": "ai-agent-working-curl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fictional AI coding activity streamed to terminals over HTTP",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
