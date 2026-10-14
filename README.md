@@ -7,7 +7,32 @@ simulation; the prompt is part of the playback, not an interactive input.
 Commands, edits, and test results are scripted text. No AI service is called and
 none of the displayed commands execute.
 
-## Quick start on Windows
+## Watch the deployed version
+
+Crude Code is hosted at [crude-code.onrender.com](https://crude-code.onrender.com).
+You only need curl and an ANSI-compatible terminal to watch; no local server
+or Node.js installation is needed.
+
+```sh
+curl -N https://crude-code.onrender.com
+```
+
+To fill your terminal on Windows PowerShell:
+
+```powershell
+curl.exe -N "https://crude-code.onrender.com/?cols=$([Console]::WindowWidth)&rows=$([Console]::WindowHeight)"
+```
+
+On macOS/Linux:
+
+```sh
+curl -N "https://crude-code.onrender.com/?cols=$(tput cols)&rows=$(tput lines)"
+```
+
+Press **Ctrl+C** to leave. After resizing your terminal, reconnect with the same
+command to send the updated dimensions.
+
+## Run locally on Windows
 
 1. Open PowerShell in this project folder.
 2. Start the server and leave that terminal open:
@@ -101,18 +126,9 @@ starts fresh. These values are not connected to any real model or account quota.
 1. Push this directory to a GitHub repository.
 2. In [Render](https://dashboard.render.com/), choose **New > Blueprint** and
    connect that repository. The included `render.yaml` selects the **Free** plan.
-3. Deploy, then copy the service's actual public URL:
-
-```sh
-curl -N https://YOUR-SERVICE.onrender.com
-```
-
-For a full-window display on Windows, replace `YOUR-SERVICE` with the deployed
-service name:
-
-```powershell
-curl.exe -N "https://YOUR-SERVICE.onrender.com/?cols=$([Console]::WindowWidth)&rows=$([Console]::WindowHeight)"
-```
+3. Deploy, then copy the service's public URL. The current deployment is
+   [https://crude-code.onrender.com](https://crude-code.onrender.com); use the
+   viewing commands at the top of this README.
 
 GitHub hosts the source code; Render runs the HTTP server. GitHub Pages alone
 cannot run it. `PORT` is supplied by the host (defaults to 3000 locally), and
