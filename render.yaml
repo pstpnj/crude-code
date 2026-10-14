@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: ai-agent-working-curl
+    name: crude-code
     runtime: node
     plan: free
     buildCommand: npm ci
